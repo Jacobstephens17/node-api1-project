@@ -63,7 +63,7 @@ server.delete("/api/users/:id", (req,res) => {
   const idVar = req.params.id
     try{
       if(!allUsers.find(user => user.id === idVar)){
-        res.status(404).json({message: `Employee with id: ${idVar} not found`})
+        res.status(404).json({message: `User with id: ${idVar} not found`})
       }else{
         allUsers = allUsers.filter(user => user.id !== idVar)
         res.status(200).json({message: `User id: ${idVar} was successfully deleted!`})
